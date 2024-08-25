@@ -1,0 +1,16 @@
+name: Extract Zip File
+
+on:
+  push:
+    paths:
+      - '**.zip'
+
+jobs:
+  extract-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract zip file
+        run: |
+          unzip *.zip
+          rm *.zip
